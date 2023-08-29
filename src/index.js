@@ -1,24 +1,26 @@
 import React from 'react';
 import { ChakraProvider } from "@chakra-ui/react";
-// import { Provider } from "react-redux";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-// import { CookiesProvider } from "react-cookie";
+import { CookiesProvider } from "react-cookie";
 
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { store } from "./Redux/store";
+
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <Provider >
-  // <CookiesProvider>
+  <Provider store={store}>
+   <CookiesProvider>
         <ChakraProvider> 
         <App />
         </ChakraProvider> 
       
-  // </CookiesProvider>
-//  </Provider>
+   </CookiesProvider>
+</Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -34,7 +34,7 @@ import {
   import { CgMenuBoxed } from "react-icons/cg";
   import { AiOutlineCodeSandbox } from "react-icons/ai";
 //   import { useNavigate } from "react-router-dom";
-//   import { useDispatch, useSelector } from "react-redux/es/exports";
+  import { useDispatch, useSelector } from "react-redux/es/exports";
 //   import { logoutAction } from "../Redux/Auth/action";
   import { useCookies } from "react-cookie";
   import { useEffect } from "react";
@@ -43,10 +43,10 @@ import {
     const [cookies, setCookie, removeCookie] = useCookies([]);
     // const navigate = useNavigate();
     // const city = useSelector((state) => state.CCreducer.City);
-    // const { Name, Email, Number, auth } = useSelector(
-    //   (state) => state.AuthReducer
-    // );
-    // console.log(auth);
+    const { Name, Email, Number, auth } = useSelector(
+      (state) => state.AuthReducer
+    );
+    console.log(auth);
     console.log(cookies.auth);
   
     return (
@@ -55,13 +55,13 @@ import {
           <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
             <HStack spacing={8} alignItems={"center"}>
               <Box>
-                {/* <Hamburger
+                <Hamburger
                   Name={Name}
                   Email={Email}
                   Number={Number}
                   auth={auth}
-                  city={city}
-                /> */}
+                  // city={city}
+                />
               </Box>
               {/* <Box onClick={() => navigate("/")}> */}
                 <Image src={ZoomCarLogo} />
